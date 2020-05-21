@@ -9,16 +9,16 @@ include('head.php');
         <div class="row">
 
             <div class="col-md-12 col-lg-6">
-                <a class="d-block mx-auto portfolio-item"  href="cargadatos.php">
+                <a class="d-block mx-auto portfolio-item" href="cargadatos.php">
                     <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
                         <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"></div>
                     </div><img class="img-fluid" src="assets/img/portfolio/cabin.png">
                 </a>
             </div>
             <div class="col-md-12 col-lg-6">
-                <a class="d-block mx-auto portfolio-item"  href="reportes.php">
+                <a class="d-block mx-auto portfolio-item" href="reportes.php">
                     <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                    <label for="">Reportes</label>
+                        <label for="">Reportes</label>
                         <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"></div>
                     </div><img class="img-fluid" src="assets/img/portfolio/cake.png">
                 </a>
