@@ -1,4 +1,6 @@
+
 <?php
+
 include('head.php');
 
 ?>
@@ -33,7 +35,3 @@ include('head.php');
         <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download mr-2"></i><span>Descargar lista!</span></a></div>
     </div>
 </section>
-
-<?php
-include('footer.php');
-?>
