@@ -17,7 +17,7 @@ switch ($link) {
     case '/php_qr/acerca.php':
         $activo3 = "active";
         break;
-    default:
+    default:    
         break;
 }
 
@@ -30,27 +30,42 @@ switch ($link) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - php_qr Certificate</title>
     <meta name="description" content="Configuración de certificado por capacitación php_qr">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css">
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/freelancer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- needs for bootstrap-select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.js"></script>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- bootstrap-select additional library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/css/bootstrap-select.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/js/bootstrap-select.min.js"></script>
+
+
 </head>
 
-<body id="page-top">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="/php_qr/">AMBGES Certificate</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?php echo $activo1; ?>" href="/php_qr">INICIO</a></li>
-                    <li class="nav-item mx-0 mx-lg-1 " role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?php echo $activo2; ?>" href="/php_qr/configurarcertificados.php">CERTIFICADOS</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?php echo $activo3; ?>" href="/php_qr/acerca.php">ACERCA</a></li>
-                </ul>
-            </div>
+<body>
+
+    <nav class="navbar fixed-top navbar-dark bg-dark text-uppercase navbar-expand-lg">
+        <a class="navbar-brand" href="#">AMBGES Certificate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1 <?php echo $activo1; ?>">
+                    <a class="nav-link h5" href="/php_qr">INICIO <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1 <?php echo $activo2; ?>">
+                    <a class="nav-link h5" href="/php_qr/configurarcertificados.php">CERTIFICADOS</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1 <?php echo $activo3; ?>">
+                    <a class="nav-link h5" href="/php_qr/acerca.php">ACERCA</a>
+                </li>
+            </ul>
         </div>
     </nav>

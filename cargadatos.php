@@ -6,7 +6,7 @@ include('head.php');
         border: 1px solid #BDBDBD !important;
     }
 </style>
-<section id="portfolio" class="portfolio">
+<section style="margin-top: 100px;">
     <main class="container-fluid">
         <form action="" method="POST">
             <div class="row justify-content-md-center mt-5">
@@ -66,11 +66,16 @@ include('head.php');
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="certificados">Certificados:</label></br>
-                                                <select class="selectpicker" data-live-search="true" id="cetificados" data-style="borde" title="Seleccione...">
-                                                    <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                                                <select class="selectpicker form-control" data-live-search="true">
+                                                    <option value="" selected>Seleccione...</option>
+                                                    <option value="C1">Certificado 1</option>
+                                                    <option value="C2">Certificado 2</option>
+                                                    <option value="C3">Certificado 3</option>
+                                                    <option value="C4">Certificado 4</option>
                                                 </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="visualizador.php"><input type="button" class="btn btn-sm btn-info" value="Visualizar"></a>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -105,3 +110,13 @@ include('head.php');
         </form>
     </main>
 </section>
+<script>
+    $(function() {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+<?php
+
+include('footer.php');
+
+?>

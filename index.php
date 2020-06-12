@@ -1,12 +1,12 @@
-
 <?php
 
 include('head.php');
 
 ?>
-<section id="portfolio" class="portfolio">
+<section style="margin-top: 100px;">
     <div class="container" style="margin-top: 40px;">
-        <h2 class="text-uppercase text-center text-secondary">ADMINISTRAR</h2>
+        <h2 class="text-uppercase text-center text-secondary">ADMINISTRAR
+        </h2>
         <hr class="star-dark mb-5">
         <div class="row">
 

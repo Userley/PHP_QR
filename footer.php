@@ -24,7 +24,38 @@
 <div class="copyright py-4 text-center text-white">
     <div class="container"><small>Copyright ©&nbsp;AMBGES Certificate 2018</small></div>
 </div>
-<!-- -->
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    var file = "";
+
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        var file_extension = $(this).val().split('.').pop();
+        file = $(this).val();
+        if (file_extension == "png" || file_extension == "jpg" || file_extension == "JPG" || file_extension == "PNG") {
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            readImage(this);
+        } else {
+            alert("Extension no válida.");
+        }
+    });
+
+
+    function readImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#img').attr('src', e.target.result); // Renderizamos la imagen
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    // $("#imgfile").change(function() {
+    //     // Código a ejecutar cuando se detecta un cambio de archivO
+    //     readImage(this);
+    // });
+</script>
 </body>
 
 

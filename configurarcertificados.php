@@ -1,7 +1,21 @@
 <?php
 include('head.php');
+$Cn = mysqli_connect("localhost", "root", "", "ambgesbd") or die("Conexión errada!");
+
+
+if (isset($_POST["enviar"])) {
+    $modelo = $_POST["modelo"];
+    $file = $HTTP_POST_FILES['imgfile']['tmp_name'];
+    $Query = mysqli_query($Cn, "INSERT INTO certificado (Modelo,img) VALUES ('" . $modelo . "','" . $file . "')");
+    if ($Query) {
+        echo "<script type='text/javascript'>alert('Se ingresó el registro!');</script>";
+    } else {
+        echo "<script type='text/javascript'>alert('No se pudo registrar!');</script>";
+    }
+}
+
 ?>
-<section id="portfolio" class="portfolio">
+<section style="margin-top: 100px;">
 
     <main class="container-fluid">
         <form action="" method="POST">
@@ -21,20 +35,20 @@ include('head.php');
                                     <div class="form-group">
                                         <label for="imgfile">Selecciona Imágen:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="imgfile">
+                                            <input type="file" class="custom-file-input" id="imgfile" name="imgfile">
                                             <label class="custom-file-label" for="imgfile">Buscar...</label>
                                         </div>
                                     </div>
                                     <div class="form-group text-center">
                                         <label for="">Imágen</label></br>
-                                        <img src="" alt="" id="img" width="450">
+                                        <img src="" alt="" id="img" width="450" style="border:1px solid #BDBDBD; box-shadow: 0px 15px 15px -6px black;">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="btn-group">
-                                <input type="button" class="btn btn-success" value="+ Guardar">
+                                <input type="submit" name="enviar" class="btn btn-success" value="+ Guardar">
                                 <input type="button" class="btn btn-danger" value=" Cancelar">
                             </div>
                         </div>
@@ -45,32 +59,8 @@ include('head.php');
     </main>
 </section>
 
-<script>
-    // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function() {
-        var fileName = $(this).val().split("\\").pop();
-        var file_extension = $(this).val().split('.').pop();
-        if (file_extension == "png" || file_extension == "jpg" || file_extension == "JPG" || file_extension == "PNG") {
-            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-            readImage(this);
-        } else {
-            alert("Extension no válida.");
-        }
-    });
+<?php
 
+include('footer.php');
 
-    function readImage(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#img').attr('src', e.target.result); // Renderizamos la imagen
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    // $("#imgfile").change(function() {
-    //     // Código a ejecutar cuando se detecta un cambio de archivO
-    //     readImage(this);
-    // });
-</script>
+?>
